@@ -6,7 +6,7 @@ An application in my company performs some tasks and then updates a MySql databa
 
 My objective was to figure out a way for someone without system administration knowledge to access this data securely without additional assistance. 
 
-## So here it goes...
+## Here we go...
 
 My plan was to create a flask application that would be accessible from any web browser. In this application, when the correct path is accessed, the software will run some predefined shell command and return the results to the browser. Now this output might be a sensitive information, so we just can't allow anyone to be able to access this. To implement a basic layer of security 
 I have used **IP whitelisting**, or only allowing certain IPs to acccess the application.
