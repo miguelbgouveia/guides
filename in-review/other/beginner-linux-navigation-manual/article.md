@@ -1,21 +1,22 @@
-Comprehensive Bash tutorial for the absolute Linux beginner. 
+A comprehensive tutorial for the absolute Linux beginner. 
 -----
 
-Welcome to the Linux world! Whether you’re just starting on an intro to CS course or wandering through your very first UNIX-based home server, learning how to navigate around in Linux (more specifically, using the command line) is going to make your life much easier and much much more powerful.
-If you’ve been Googling around, you’ll notice that not a lot of written Linux tutorials out there are very beginner-friendly. In fact, none of them are. Except, maybe, this guy:
+Welcome to the Linux world! Whether you’re just starting on an Introduction to CS course or wandering through your very first UNIX-based home server, learning how to navigate around in Linux (more specifically, using the command line) is going to make your life much easier.
 
-[Ryan's Linux Tutorial](http://ryanstutorials.net/linuxtutorial/ "Linux Tutorial")
+If you’ve been Googling around, you’ll notice that few Linux tutorials out there are beginner-friendly. Except, maybe, [Ryan's Linux Tutorial](http://ryanstutorials.net/linuxtutorial/ "Linux Tutorial").
 
-First of all, his tutorials are excellent. His explanations are extensive and filled with tons of tips and tricks along the way. He also covered many solid aspects of working in the command line — very helpful for those who want to understand how the command line works. 
+Ryan's tutorials are excellent. His explanations are extensive and filled with tons of tips and tricks to help viewers gain mastery. He also covers many important aspects of working in the command line — something that is very helpful for those who want to understand how the command line works. 
 
-But what about this tutorial? This tutorial aims to equip you with the same, or perhaps, more compact explanations of some of the basic commands you should know when working in Linux. In short, this tutorial is a beginner-friendly guide to get you up and running as quickly as possible. Each explanation here will be succinct and empirical; so don’t expect me to cover more ground than Ryan’s tutorial. If you’d like to know more, simply refer to his tutorial. If you have any questions, feel free to contact me.
+But what about this tutorial? This tutorial aims to equip you with compact explanations of the basic commands you should know when working in Linux. **In short, this tutorial is a beginner-friendly guide to get you up and running as quickly as possible.** 
+
+Each explanation here will be succinct and empirical, If you have any questions, feel free to reach out in the comments section below or check out Ryan's tutorials as well.
 
 ## Getting Started
 
 
 ### Linux
 
-There are many distributions of Linux out there. Each of them has their own variation of commands to work with. Specifically for this tutorial, I’m going to be using **Ubuntu 14.04.2 LTS** on **[Cloud9](www.c9.io)**. Keep in mind that all commands demonstrated here will probably be usable on earlier and future versions of Ubuntu, as well as Debian and Debian-based *distro*s.
+There are many distributions of Linux out there. Each of them has a variation of commands to work with. For this tutorial, I’m going to be using **Ubuntu 14.04.2 LTS** on **[Cloud9](www.c9.io)**. Keep in mind that all commands demonstrated can be used on earlier and future versions of Ubuntu, as well as Debian and Debian-based *distro*s.
 
 To check for the distribution and version number, simply type this into the terminal.
 
@@ -24,7 +25,7 @@ To check for the distribution and version number, simply type this into the term
 
 ### Bash
 
-Not only do different distros have different commands, they also have different default *shell* (scripting environment). What this means is that this window — often called the *terminal* — works differently.
+Not only do different distros have different commands, they also have different default *shells* (scripting environments). This means that the window below  — AKA the *terminal* — works differently for each distro.
 
 ![Terminal window](https://cdn-images-2.medium.com/max/1200/1*I3GgyZBTMMcKMfgrLzfqXg.jpeg "Terminal window")
 
@@ -37,11 +38,11 @@ In Bash, you’ll typically be presented with this kind of prompt:
 
 ![Bash prompt](https://cdn-images-2.medium.com/max/1200/1*UEogQIjdTRZZbePT_4_l-w.jpeg "Bash prompt")
 
-where `brillydev` is my username, and `~/workspace` is the directory I’m currently in, followed by a dollar sign (`$`), or depending on some user, a hash (`#`).
+where `brillydev` is my username, and `~/workspace` is the directory I’m currently in, followed by either a dollar sign (`$`) or a hash (`#`), depending on whichever you like best.
 
-Because I’m lazy, I’m going to omit that `brillydev:~/workspace`, and leave only `$` when I show you my terminal window. You don’t need to type all of these `brillydev:~/workspace $` when you type the command.
+Because I’m lazy, I’m going to omit that `brillydev:~/workspace`, and leave only `$` when I show you my terminal window. You don’t need to type `brillydev:~/workspace $` when you type the command.
 
-Oh, and keep in mind that Linux is case-sensitive. `A` is different from `a`!
+**Do note that Linux is case-sensitive. `A` is different from `a`!**
 
 
 
@@ -56,17 +57,17 @@ Oh, and keep in mind that Linux is case-sensitive. `A` is different from `a`!
 
 In case you’re wondering:
 
-* `~` (tilde) means the user’s home directory, usually /home/username
-* `.` (dot) means the current directory you’re in
-* `..` (dot dot) means the parent directory of the current directory you’re in. 
+* `~` (tilde) refers to the user’s home directory, usually /home/username
+* `.` (dot) refers to the current directory you’re in.
+* `..` (dot dot) refers to the parent directory of your current directory. 
 
-   For example, if you’re in `foo/bar/`, `.` will represent `bar/`, `..` will represent `foo/
+   For example, if you’re in `foo/bar/`, `.` will represent `bar/`, `..` will represent `foo/`
 `.
 
 
 #### cd
 
-The most basic command of all time, `cd` (change directory) means. Err, change directory.
+The most basic command of all time, `cd` (change directory), changes the current directory.
 
     $ pwd
     /home/brillydev/workspace/foo/bar
@@ -75,19 +76,19 @@ The most basic command of all time, `cd` (change directory) means. Err, change d
     $ pwd
     /home/brillydev/workspace/foo
 
-You can see that the directory changes according to what you type after `cd`. Typing `cd` alone without any *argument* (without anything that follows it) will bring you to the home directory of the user.
+You can see that the directory changes according to what you type after `cd`. Typing `cd` alone without any *argument* (without anything that follows it) will bring you to the home directory of the user. **Thus, your home directory is your default directory.**
 
 `cd` followed by a dash (`-`)will bring you to the recent directory you were in.
 
-    $ cd
+    $ cd # change directory to home
     $ pwd
     /home/brillydev
 
-    $ cd workspace/foo
+    $ cd workspace/foo # change directory to workspace/foo
     $ pwd
     /home/brillydev/workspace/foo
 
-    $ cd -
+    $ cd - # also changes directory to home
     $ pwd
     /home/brillydev
 
@@ -102,12 +103,12 @@ You can see that the directory changes according to what you type after `cd`. Ty
     $ ls
     apple.txt bar/ foo/ somefiles.txt
 
-A slash (`/`) post-fixed after a name indicates that it is a directory. In this case, `bar` and `foo` are directories. Anything not with a slash are all files.
+A slash (`/`) post-fixed after a name indicates that it is a directory. In this case, `bar` and `foo` are directories. Any items without slashes behind their names (apple.txt, somefiles.txt) are content files.
 
 
 #### Flags
 
-In addition to performing a general task, a command may also contain flags to specify a specific task you want the command to do. A flag is anything prefixed with a dash (`-`) that follows the command name.
+In addition to performing a general task, a command may also contain flags to specify a certain task you want to do. A flag is anything prefixed with a dash (`-`) that follows the command name.
 
 For example, you can type `ls -l`. In this case, `l` being the flag, to display the content of the directory in a nice list view.
 
@@ -118,7 +119,7 @@ For example, you can type `ls -l`. In this case, `l` being the flag, to display 
     drwxr-xr-x 2 brillydev brillydev 4096 Oct 22 13:18 foo/
     -rw-r--r-- 1 brillydev brillydev 0 Feb 6 14:08 somefiles.txt
 
-Flags can also be combined. `ls -a` display all content, including hidden files (files that are prefixed with a dot). When used with `ls -l`, we can combine them like this:
+**Flags can also be combined.** `ls -a` displays all content, including hidden files (files that are prefixed with a dot). When used with `ls -l`, we can combine them like this:
 
     $ ls -la
     total 16
@@ -138,7 +139,7 @@ Some flags can also be more than one-letter long. Those that are multiple letter
 
 #### tree
 
-For those who want more fancy visualization, `tree` is for you.
+For those who want a fancier visualization method, the `tree` is for you.
 
     $ tree 
     .
@@ -151,7 +152,7 @@ For those who want more fancy visualization, `tree` is for you.
 
 #### clear / reset / Ctrl + L / ⌘ + K
 
-You’re having fun playing around with all these commands when you realize you screen is really cluttered and you need some clean up. Typing `clear` or `reset` or input any of the key combinations mentioned will get your terminal wiped up.
+Suppose you’re having fun playing around with all these commands when you realize you screen is really cluttered. You need some clean up. **Typing `clear` or `reset` or input any of the key combinations mentioned will get your terminal wiped up.**
 
 
 #### File Execution
@@ -165,21 +166,21 @@ If you ever find yourself stuck in the program, simply press <kbd>Ctrl</kbd> + <
 
 #### Some Addition
  
-If shutting down the system is frustrating to you, here is the way to do it.
+If manualy shutting down the system is frustrating, shell commands make it easy:
 
     $ shutdown -h now
 
-To restart the computer:
+Restart the computer with:
 
     $ reboot
 
-To log out:
+Log out with:
 
     $ exit
 
 or simply press <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 
-If any of these don’t work, adding a `sudo` in front will probably help.
+If any of these don’t work, adding a `sudo` in front will probably help:
 
     $ sudo reboot
 
@@ -222,7 +223,7 @@ Interestingly, it can also be used to rename things as well!
     $ ls
     hello.txt
 
-And if you’re tired of typing ls everytime after the command, a semicolon can condense your code into one line. This produces the same effect:
+And if you’re tired of typing ls every time, **a semicolon can condense your code into one line.** This produces the same effect:
 
     $ mv apple.txt hello.txt; ls
     hello.txt
@@ -230,7 +231,7 @@ And if you’re tired of typing ls everytime after the command, a semicolon can 
 
 #### rm
 
-`rm` (remove) removes files. Take note that this action cannot be undone.
+`rm` (remove) removes files. **Take note that remove cannot be undone.**
 
     $ cd ..
     $ ls
@@ -242,7 +243,7 @@ And if you’re tired of typing ls everytime after the command, a semicolon can 
     $ ls
     bar/ foo/
 
-`rm` cannot be used with directories, unless accompanied by `-r` flag (short for *recursive*). What this means is that `rm` will go into every directory in the specified path and delete files one by one, recursively up each directory inside. If you don’t understand this, it’s fine, unless you do programming. Just remember that it deletes all the files and directories in the specified path.
+`rm` cannot be used with directories, unless accompanied by `-r` flag (short for *recursive*). This means that `rm` will go into every directory in the specified path and delete files one by one, recursively up each directory inside.
 
     $ ls
     bar/ foo/
@@ -254,7 +255,7 @@ And if you’re tired of typing ls everytime after the command, a semicolon can 
     $ ls
     bar/
 
-If you’re tired of typing `y`s for all the files, `rm -rf` can help you. Be extremely careful, however, as this command-flag combination is incredibly dangerous. If you accidentally type the wrong path — boy, there’s no going back!
+Similar to the semicolon trick, f you’re tired of typing `y`s for all the files, `rm -rf` can help you. **Be extremely careful, however, as this command-flag combination is incredibly dangerous.** Although this method is faster and easier, if you accidentally type the wrong path, you say goodbye to all of the files in that path!
 
 
 #### rmdir
@@ -267,7 +268,7 @@ If you try to use rm alone for directories, you’ll be faced with this:
     $ rm bar
     rm: cannot remove ‘bar’: Is a directory
 
-In this case, `rmdir` (remove directory) can be used instead. Note also that this command can only be used with empty directories.
+In this case, `rmdir` (remove directory) can be used instead. **This command can only be used with empty directories.**
 
     $ ls
     bar/
@@ -305,7 +306,7 @@ To copy a directory recursively, use `cp -r`.
 
 #### ln -s
 
-You’ll encounter this quite often in the future. So it’s probably good to know it now. To create a *symbolic link* (Google for explanations), use `ln -s`.
+You’ll encounter this quite often in the future. So it’s probably good to know it now. To create a *symbolic link,* use `ln -s`. [Symbolic links (or symlinks)](https://en.wikipedia.org/wiki/Symbolic_link) are files that contain references to other files in the directory. These links point to a target file, which, even if moved or deleted, does not influence the symlink. As a result, symlinks can serve as placeholders and they are commonly used in shells.
 
     $ ln -s ~/apache ~/Desktop/apache
 
@@ -314,7 +315,7 @@ You’ll encounter this quite often in the future. So it’s probably good to kn
 ### Working with Content
 
 #### echo
-`echo` prints out whatever you say to it.
+`echo` prints out whatever text comes after it. Use "" to designate strings.
 
     $ echo "hello world"
     hello world
@@ -334,14 +335,16 @@ These commands don’t do exactly the same thing. Do some little experiments to 
 
 #### grep
 
-`grep` is an extremely powerful tool to search the content of a file. It prints out the line containing the word(s) specified, if it is present in the file. For example.
+`grep` is an extremely powerful tool to **search** the content of a file. It prints out the line containing the specified word(s), if present in the file. 
+
+For example:
 
     $ grep "blah blah blah" hello.txt
     Lorem ipsum blah blah blah.
 
 (actual result will have `blah blah blah` highlighted)
 
-There are a lot more powerful tools out there, such as `sed` and `awk`, that will unleash your potential in Linux. We can’t cover all of them here, so be sure to do some research to find out more about them!
+There are a lot more powerful tools out there, such as `sed` and `awk`, that can maximize your potential as a Linux user. We can’t cover all of them here, but do some research to find out more about them!
 
 
 
@@ -350,7 +353,7 @@ There are a lot more powerful tools out there, such as `sed` and `awk`, that wil
 
 #### man
 
-If you happen to forget, or see a new command you’ve never heard of, apart from Google, your user manual will also be incredibly helpful. To use it, simply type `man`.
+If you happen to forget, or if you see a new command you’ve never heard of, apart from Google, your user manual will also be incredibly helpful, albeit a bit long. To use it, simply type `man`.
 
     $ man mkdir
     [LONG INSTRUCTIONS ON HOW TO USE mkdir]
@@ -361,16 +364,17 @@ If you happen to forget, or see a new command you’ve never heard of, apart fro
 
 #### Pipe
 
-`|` (that vertical bar right above the <kbd>Enter</kbd> key) is called a *pipe*. It redirects the output of the left command to the input of the right. For example:
+`|` (that vertical bar right above the <kbd>Enter</kbd> key) is called a *pipe*. It turns the output of the left command into the input of the right. For example:
 
-    $ echo “hello world\n
+    $ echo “hello world
+
     You’re really cute.” | grep “cute”
     You’re really cute.
 
 
 #### Redirection
 
-Redirections are similar to pipe; but instead of passing the output as an input, they save the output to a file, or read the content of a file.
+Redirections are similar to pipes, but instead of passing the output as an input, redirections save the output to a file, or read the content of a file.
 
 * `>` saves the output to a file
 * `<` reads the content of a file
@@ -384,7 +388,7 @@ Redirections are similar to pipe; but instead of passing the output as an input,
     $ wc < abc.txt
     21
 
-Redirections do overwrite the files each time it is used. Use appends (`>>` and `<<`) should you decide to not overwrite them.
+**Redirections overwrite the files each time the commands are used.** Use appends (`>>` and `<<`) should you decide to not overwrite them.
     
     $ ls foo >> abc.txt | grep "bar"
     bar/
@@ -396,18 +400,18 @@ Redirections do overwrite the files each time it is used. Use appends (`>>` and 
 
 #### apt-get
 
-Working with computers nowadays usually requires external software from the Internet. You can choose to download them manually, or use a package manager to manage all the stuff for you. `apt-get` (advance packaging tool) is the default package manager for Ubuntu and Debian.
+Working with computers usually requires external software from the Internet. You can choose to download external materials manually, or use a package manager to manage all the stuff for you. `apt-get` (APT is the advance packaging tool) is the default package manager for Ubuntu and Debian.
 
     $ apt-get install vim
     $ apt-get remove vim
     $ apt-get update
 
-If you ever get stuck, `sudo` can help you.
+If you ever get stuck, adding `sudo` after `$` can typically solve problems.
 
 
 #### wget
 
-`wget` is a tool to download files from the Internet.
+`wget` is a tool for downloading files from the Internet.
 
     $ apt-get install wget
     $ wget https://www.google.com/thefilethatIwant.zip
@@ -429,7 +433,7 @@ Sometimes you’ll get files in archived form. To extract them, use unzip or tar
 
 #### vi/vim
 
-`vi` or `vim` (vi improved) is an awesome tool to do all things text. It’s incredibly difficult to use at first, but through time, you’ll realize that it’s one of the best out there.
+`vi` or `vim` (vi improved) is an awesome tool for handling text-based operations. It may seem difficult to use at first, but through time, you’ll realize that it’s one of the best Linux tools out there.
 
     $ apt-get install vim
     $ vim sometext.txt
@@ -446,6 +450,7 @@ If you’re kinda lazy to learn `vim`, `nano` is a simple intuitive backup.
     $ apt-get install nano
     $ nano sometext.txt
 
+`nano` is a much more UI-driven approach to text-editing, making it slightly better than `vim` for new Linux users.
 
 #### emacs
 
@@ -454,7 +459,7 @@ All-time rival of `vim`, here comes `emacs`.
     $ apt-get install emacs
     $ emacs sometext.txt
 
-
+Emacs need to be open as long as the program is open, but they are very customizable. See this forum for more information: [emac vs. vim](http://stackoverflow.com/questions/1430164/differences-between-emacs-and-vim).
 
 ### Permissions
 
@@ -471,20 +476,20 @@ Remember this?
 
 Those arcane characters on the leftmost column are where your permission settings lie. To characterize, there are three main permissions you can set for a file or a directory: **read**, **write** and **execute**, represented by `r`, `w` and `x` respectively.
 
-The permissions are arranged in the following order: **user**, **group** and **others**.
+The permissions are arranged in the following order: **user**, **group**, and **others**.
 
-For example,
+For example:
 
     -rw-r--r-- 1 brillydev brillydev 0 Oct 22 13:18 apple.txt
 
-This means that the **user** (owner of `apple.txt`) can **read and write** to `apple.txt`, **the user group** which the owner of `apple.txt` is in, as well as **other people** from somewhere else can **only read** `apple.txt`.
+This means that the **user** (owner of `apple.txt`) can **read and write** to `apple.txt`, and **the user group**, which contains the owner of `apple.txt` as well as **other people** from somewhere else, can **only read** `apple.txt`.
 
 **Execute**, in the context of a directory, also means **access**. Hence if you deny permission to execute a directory, you can’t access it.
 
 
 #### chmod
 
-To change permissions, `chmod` (change mode) can be used. I leave it to you to interpret what this means :P
+To change permissions, `chmod` (change mode) can be used.
 
     $ sudo chmod 777 apple.txt
     $ sudo chmod a-r apple.txt
@@ -564,10 +569,6 @@ Phew! That was an awful lot of stuff! Use it often, and you’ll remember all th
 
 ![Linux/UNIX Command Quick Reference](https://cdn-images-2.medium.com/max/1200/1*3DaRml5vdPK_fCCCxBEHnA.png "adapted from https://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/]")
 
-Keep in mind that there are still tons of things which I did not cover in this tutorial. To learn more topics or gain deeper insights, be sure to visit [Ryan’s articles](http://ryanstutorials.net/linuxtutorial/ "Linux Tutorial")!
+Keep in mind that there are still tons of things that I did not cover in this tutorial. Online sources, particularly the ones I've linked to throughout this guide, will help you immensely in your journey to master Linux.
 
-What’s next? It’s now on **you**.
-
-As you develop your own experience, remember that you’re not alone. If you ever get stuck on something, Google is always there waiting for you.
-
-Good luck :)
+It’s now on **you**. Good luck :)
