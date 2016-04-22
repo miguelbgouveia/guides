@@ -6,11 +6,11 @@ We’ll begin by walking through the development of a small project in a test-dr
 
 Definitely a question worth asking before we move forward. In a nutshell, TDD changes our regular workflow. Traditionally, the software development workflow is mostly a loop of the following steps:
 
- 1. Think about the task (design).
- 2. Write the code to accomplish the task (implementation).
- 3. Test the code to see if it works (testing).
+ 1. Think about what your code is supposed to do.
+ 2. Write the code to do it.
+ 3. Test the code to see if it works.
 
-Often, writing a successful program requires multiple loops or repeated testing. As a result, testing and revising code comprehensively can take a rather long time.
+For example, let's say we want to write a function `add(number1, number2)` to add two numbers together. First, we write the `add` function, then we try a few examples to see if it gives the output we expect. We could try running `add(1,1)`, `add(5,7)` and `add(-4, 5)`, and we might get the outputs `2`, `12`, and... oops, there must be a bug somewhere, `-9`.
 
 We revise the code to try to fix the incorrect output, and then we run `add(-4, 5)` again. Maybe it will return `1`, just like we wanted. Just to be safe, we'll run the other examples to see if they still give the right output. Oops, now `add(5,7)` returns `-2`. We'll go through a few cycles of this: we revise our code and then try a few examples until we're sufficiently confident that our code works just the way we want.
 
@@ -45,7 +45,7 @@ Oops, we fixed one thing but broke other things at the same time. We'll revise t
 
 Of course, just because our code passed the tests it doesn't mean the code works in general. But it does give us a little more confidence about its correctness. And if we find a bug in the future that our tests missed, we can always add more tests for better coverage.
 
- - **Automatic regression detection** --- Sometimes coders mistakenly create bugs that make their programs defective, or they reintroduce old bugs that had previously been fixed. Such mistakes are called *regressions*. Regressions might sneak by unnoticed for a long time if you don't use automated testing. If you create a unit test for each bug that you fix, any code that passes your unit tests afterwards is guaranteed to be free of any old bugs. As a result, if you encounter errors in the program later on, you can be sure that regression is not the issue. 
+Many of you might object, "*But what's the point of that? Isn't that just a lot of pointless extra bother?*"
 
 It’s true that setting up the testing environment and figuring out how to unit write tests often takes some effort. In the short run, it's faster to just do things the traditional way. But in the long run, TDD can save time that would otherwise be wasted manually testing the same thing repeatedly. And it just so happens that there are a number of other benefits to unit testing:
 
@@ -168,7 +168,7 @@ Now open `SpecRunner.html` and click on "Spec List". You should see 1 failing te
 
 ![1 spec, 1 failure; DateTime uses the current time when called with no arguments](http://i.stack.imgur.com/zNO6v.png)
 
-If you click "Failures" you will see some message about a ReferenceError because DateTime is not defined. _That is exactly what should happen, since we haven't written any code defining `DateTime` yet._
+If you click "Failures" you will see some message about a ReferenceError because DateTime is not defined. That is exactly what should happen, since we haven't written any code defining `DateTime` yet.
 
 If the test code above didn't make sense to you, here’s a brief explanation of the Jasmine functions. You can read more details from the [Jasmine docs](http://jasmine.github.io/2.4/introduction.html).
 
@@ -199,7 +199,7 @@ var DateTime = (function () {
 })();
 ```
 
-When we open `SpecRunner.html` our test should pass because DateTime is now a defined object:
+When we open `SpecRunner.html` our test should pass:
 
 ![1 spec, 0 failures](http://i.stack.imgur.com/KHMPk.png)
 
@@ -227,7 +227,7 @@ Testing all of these may seem a little superfluous, since we're just writing a w
  1. What should happen when we pass in a single argument to `DateTime` that is not a `Date` object?
  2. What should happen when we pass in a `Date` object that is invalid, such as `new Date(1e99)` or `new Date("Invalid string")`?
 
-There are lots of possible answers to these two questions depending on how you choose to handle your errors. I typically choose one of the following strategies for dealing with these issues:
+There are lots of possible answers to these two questions depending on your error handling philosophy, and discussing such philosophical quandaries is outside the scope of this article. I chose the following strategies for dealing with these two issues:
 
  1. Throw an error.
  2. Continue without throwing an error. All the native `Date` methods we use will return `NaN` in this situation, so our `DateTime` properties and methods will propagate this behavior automatically.
@@ -253,7 +253,7 @@ This is fairly straightforward, except for the `DateTime.bind` part. The [functi
 
 When we open `SpecRunner.html` now we should see that the three specs we just wrote all failed. This is an important thing to check: If a spec passes before we write the implementation code, that usually means we made a mistake while writing the spec.
 
-Now we can implement the code:
+Now we can write the implementation:
 
 ```javascript
 // ...
@@ -268,13 +268,13 @@ return function (date) {
 };
 ```
 
-At this point, all of the tests should pass.
+All the tests should pass.
 
 ## Getters
 
-The easiest next step is to implement the property getters. Writing tests for all of them is straightforward, although a little tedious. Simply loop through some test dates and make sure that all the property getters return the expected values.
+The easiest next step is to implement all the property getters. Writing tests for all of them is straightforward, although a little tedious. All that's involved is looping through some test dates and making sure that all the property getters return the expected values for these test dates.
 
-When choosing test dates it's a good idea to include both typical dates as well as edge cases.
+When choosing test dates it's a good idea to include both typical dates as well as some potential edge cases.
 
 ```javascript
 var testDates = [
@@ -323,7 +323,7 @@ describe("getter", function () {
 });
 ```
 
-All the new tests we just wrote **should fail now**, except the one corresponding to the `offset` property, since we already implemented the getter for `offset`.
+All the new tests we just wrote should fail now, except the one corresponding to the `offset` property, since we already implemented the getter for `offset`.
 
 Now that we've written the tests we can write the implementation code.
 
@@ -385,9 +385,7 @@ When I run the tests I see eight failed specs. This number might vary depending 
 > DateTime getter returns expected values for property 'monthName'  
 > Expected 'December' to equal 'November'.
 
-This is caused by the `2111-11-30T22:01:10` date. My `monthName` getter says this is December instead of November. This is because I live in the GMT+8 timezone, so something behind the scenes is converting the time from GMT into my timezone, resulting in `2111-12-01 06:01:10`. So we must consider time zone when creating our date library.
-
-The solution to this problem is to use the `getUTCMonth` method instead of the `getMonth` method to prevent this conversion:
+This is caused by the `2111-11-30T22:01:10` date. My `monthName` getter says this is December instead of November. This is because I live in the GMT+8 timezone, so something behind the scenes is converting the time from GMT into my timezone, resulting in `2111-12-01 06:01:10`. The solution to this problem is to use the `getUTCMonth` method instead of the `getMonth` method to prevent this conversion:
   
 ```javascript
 get monthName() {
@@ -455,7 +453,7 @@ This time, we’ll create a date, set it's year property to `2008`, set it's mon
  - In the second pass we'll use the `year`, `monthName`, `ordinalDate`, `ampm`, `hours12`, `minutes`, and `seconds` properties.
  - In the third pass we'll use the `offset` property.
 
-Here is the code for the setter unit tests:
+Here's the code for the setter unit tests:
 
 ```javascript
 describe("setter", function () {
@@ -552,7 +550,7 @@ set offset(v) {
 }
 ```
 
-All our setter tests should pass now.
+All the tests should pass now.
 
 ## Formatting and parsing
 
@@ -566,10 +564,10 @@ var expectedStrings = {
 };
 ```
 
-Once we've constructed this object, writing the tests is straightforward:
+Once we've constructed this object, it's straightforward to write the tests:
 
  - For `toString`, we go through all the test dates (e.g. `1970-07-18T18:36:42`) and see if they return the expected string for each of the formats (e.g.  `"1970-7-18 18:36:42"` for `"YYYY-M-D H:m:s"`).
- - For the `DateTime(dateString, formatString)` constructor, we go through all the pairs of formats and date strings (e.g. `"1970-7-18 18:36:42"` and `"YYYY-M-D H:m:s"`) to make sure that each constructed object has the same offset as the corresponding test date.
+ - For the `DateTime(dateString, formatString)` constructor, we go through all the pairs of formats and date strings (e.g. `"1970-7-18 18:36:42"` and `"YYYY-M-D H:m:s"`) and make sure the constructed object has the same offset as the corresponding test date.
 
 That’s expressed in code here:
 
@@ -595,7 +593,7 @@ it("parses a string as a date when passed in a string and a format string", func
 
 As usual, these tests should fail if we run them now.
 
-Here's the implementation code to add these features. **This is the most complicated part of the library**, so the code here is not as simple as the code we've written up to this point. Feel free to just skim through this code to get the big picture without analyzing the finer details.
+Here's the implementation code to add these features. This is the most complicated part of the library, so the code here is not as simple as the code we've written up to this point. Feel free to just skim through this code to get the big picture without analyzing the finer details.
 
 ```javascript
 "use strict";
@@ -747,7 +745,7 @@ Create a file in your project called `package.json` with the following content:
 ```javascript
 {
   "scripts": {
-    "test": "node_modules/.bin/karma start my.conf.js"
+    "test": "karma start my.conf.js"
   },
   "devDependencies": {
     "jasmine-core": "^2.3.4",
@@ -778,15 +776,17 @@ module.exports = function(config) {
 };
 ```
 
-If you use Windows, open the Node.js command prompt. Otherwise, just open your terminal and navigate to your project folder. Then run `npm install`. 
+If you use Windows, open the Node.js command prompt. Otherwise, just open your terminal. Navigate to your project folder and run `npm install`. 
 
-Once it's done installing, you can run `npm test` whenever you want to run the coverage tests. It will create a `coverage` folder with a subfolder corresponding to your browser name. Open the `index.html` file in that folder to see the code coverage report.
+Once it's done installing, you can run `npm test` whenever you want to run the coverage tests. It will create a `coverage` folder with a subfolder corresponding to the name of your browser. Open the `index.html` file in that folder to see the code coverage report.
 
 ## Going through the code coverage report
 
-The code coverage highlights unexecuted code in red, 
+The code coverage highlights unexecuted lines of code in red, 
 
-![unexecuted line of code](http://i.stack.imgur.com/nWlVW.png) and unevaluated logical branches in yellow.
+![unexecuted line of code](http://i.stack.imgur.com/nWlVW.png)
+
+and unevaluated logical branches in yellow.
 
 ![unevaluated conditional branch](http://i.stack.imgur.com/RzoRZ.png)
 
@@ -801,7 +801,7 @@ At this point, the code coverage report shows that the unit tests cover 96 perce
         });
     });
     ```
- - There are no tests that attempt setting `monthName` to an invalid month name. We can add some to the `describe("setter", ...)` section:
+ - There are no tests that try to set `monthName` to an invalid month name. We can add some to the `describe("setter", ...)` section:
 
     ```javascript
     it("throws an error on attempt to set property `monthName` to an invalid value", function () {
@@ -847,7 +847,7 @@ Now the tests should cover 100 percent  of the lines and branches of the code.
 
 # Conclusion
 
-Congrats! If you've read through this far, you should understand
+Congrats! If you've read through this far, you should have a basic idea of
 
  - unit testing
  - benefits of unit testing 

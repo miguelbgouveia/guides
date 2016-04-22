@@ -192,9 +192,7 @@ sudo supervisorctl start stats
 
 Since we have not defined any port for the application, it will default to port 5000. To change this, follow the instructions I found on [this Stack Overflow page](http://stackoverflow.com/a/29079598/2894655).
 
-You can find the application at [http://SERVER_IP:5000](#). And the 
-the status updates should be available at [http://SERVER_IP:5000/status/](#).
+You can find the application at [http://SERVER_IP:5000](#). And the status updates should be available at [http://SERVER_IP:5000/status/](#).
 
 
-I hope my post was enjoyable and of help to you. Please feel free 
-to leave any comments below with thoughts and feedback.
+I hope my post was enjoyable and of help to you. Please feel free to leave any comments below with thoughts and feedback.

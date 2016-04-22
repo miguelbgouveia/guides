@@ -1,7 +1,7 @@
-### Token-based authentication with  Ruby on Rails 5 API by Hristo Georgiev
-- [Read the guide](http://tutorials.pluralsight.com/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api?status=in-review)
-- [Read more from Hristo Georgiev](http://tutorials.pluralsight.com/author/Kaizeras) <img src="https://avatars.githubusercontent.com/u/6340189?v=3" width="30" height="30" alt="Hristo Georgiev" />
-- Related to: Ruby, Ruby on Rails
+### Testing user interfaces with browser automation by Peter Olson
+- [Read the guide](http://tutorials.pluralsight.com/front-end-javascript/testing-user-interfaces-with-browser-automation?status=in-review)
+- [Read more from Peter Olson](http://tutorials.pluralsight.com/author/peterolson) <img src="https://avatars.githubusercontent.com/u/920512?v=3" width="30" height="30" alt="Peter Olson" />
+- Related to: Front-End JavaScript (Angular, React, Meteor, etc)
 
 ### Profiling Python's core collection data structures by Luke Lee
 - [Read the guide](http://tutorials.pluralsight.com/python/profiling-python-s-core-collection-data-structures?status=in-review)
@@ -25,7 +25,7 @@
 
 ### Beginner: Linux Navigation Manual by Prakrit Duangsutha
 - [Read the guide](http://tutorials.pluralsight.com/other/beginner-linux-navigation-manual?status=in-review)
-- [Read more from Prakrit Duangsutha](http://tutorials.pluralsight.com/user/brillydev) <img src="https://avatars.githubusercontent.com/u/2718812?v=3" width="30" height="30" alt="Prakrit Duangsutha" />
+- [Read more from Prakrit Duangsutha](http://tutorials.pluralsight.com/author/brillydev) <img src="https://avatars.githubusercontent.com/u/2718812?v=3" width="30" height="30" alt="Prakrit Duangsutha" />
 - Related to: other
 
 ### Profiling memory usage in Python by Luke Lee
@@ -77,16 +77,6 @@
 - [Read the guide](http://tutorials.pluralsight.com/devops/elb-ssl-termination-the-docker-way?status=in-review)
 - [Read more from Scott Miller](http://tutorials.pluralsight.com/user/smiller171) <img src="https://avatars.githubusercontent.com/u/3587913?v=3" width="30" height="30" alt="Scott Miller" />
 - Related to: DevOps (Docker, Nagios, Jenkins, Chef, Puppet, etc)
-
-### Running shell commands with Flask by Red Moses
-- [Read the guide](http://tutorials.pluralsight.com/python/running-shell-commands-with-flask?status=in-review)
-- [Read more from Red Moses](http://tutorials.pluralsight.com/user/redmoses) <img src="https://avatars.githubusercontent.com/u/4059490?v=3" width="30" height="30" alt="Red Moses" />
-- Related to: Python
-
-### Response Streams with Rails 4 and Redis by Adam Fortuna
-- [Read the guide](http://tutorials.pluralsight.com/ruby-ruby-on-rails/response-streams-with-rails-4-and-redis?status=in-review)
-- [Read more from Adam Fortuna](http://tutorials.pluralsight.com/user/adamfortuna) <img src="https://avatars.githubusercontent.com/u/7741?v=3" width="30" height="30" alt="Adam Fortuna" />
-- Related to: Ruby, Ruby on Rails
 
 ### Don't swallow InterruptedException. Call Thread.currentThread().interrupt() instead. by Michael Scharf (Github)
 - [Read the guide](http://tutorials.pluralsight.com/java-and-j2ee/don-t-swallow-interruptedexception-call-thread-currentthread-interrupt-instead?status=in-review)

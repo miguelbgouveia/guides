@@ -1,5 +1,3 @@
-# Response Streams with Rails 4 and Redis
-
 If you're on the fence about updating an older application to use Rails 4, the addition of `ActionController::Live` might be helpful in making your decision a little easier. It enables keeping a connection open to your server, which can then respond with partial updates with ease. This bridges one of the bigger gaps that causes people to choose [node.js](http://nodejs.org/) over Rails for projects.
 
 ## A Basic Redis Connection
@@ -34,13 +32,11 @@ end
 
 Here's a quick recap of what's going on:
 
-
 * We're using [Puma](https://github.com/puma/puma) which allows for concurrent connections to the server.
 * We create a new connection to Redis. This is important because when we call `psubscribe`, that connection is locked, and can't do anything else.
 * Use `psubscribe` to subscribe to all messages for this user by using an expression. Elsewhere in the application, we are `publish`ing messages to this same channel.
 * When a message is received, it's passed down to the client. In this case we're passing down JSON.
 * `ensure` that the `redis` connection is `quit` and the response is ended.
-
 
 ## The Problem
 
@@ -103,4 +99,4 @@ If you set this up to run in a `before` filter, and do any database communicatio
 
 ## Update
 
-For an example of how this technique is used, read the post on [Teaching iOS 7 at Code School](/articles/teaching-ios7-at-codeschool/). This post details the user experience that can be achieved using response streams.
+For an example of how this technique is used, read the post on [Teaching iOS 7 at Code School](http://adamfortuna.com/articles/teaching-ios7-at-codeschool). This post details the user experience that can be achieved using response streams. Tutorial was [originally posted here](http://adamfortuna.com/articles/response-streams-with-rails-4).
