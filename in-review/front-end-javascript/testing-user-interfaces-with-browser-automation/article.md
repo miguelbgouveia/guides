@@ -274,7 +274,7 @@ If everything ran correctly, then in your console you should see some output end
 OK. 142 assertions passed. (22.616s)
 ```
 
-**The test code is fairly straightforward, but there are a couple things about the script that is worth pointing out:**
+The test code is fairly straightforward, but there are a couple things about the script that is worth pointing out:
 
  - It's a good idea to keep all of the CSS selectors used to access page elements in one object instead of directly passing in strings. This reduces duplication, makes it easier to revise if you change the HTML, and also lets your IDE help you more with code completion.
  - I made separate stages for "Open page" and "Close page." This is not required, but it makes things easier if you add more stages later.
