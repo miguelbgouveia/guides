@@ -7,64 +7,47 @@ Introduction
 ========================================================================================================
 
 As early as elementary school, we learned what is a mathematical function and how to write it. For
-example - ``` f(x)=x^2``` is a simple quadratic function.
+example, ``` f(x)=x^2``` is a simple quadratic function.
 
-A function describes a mathematical statement. The above function is basically a mapping between two sets of natural number as given at the right in figure [fig:func1]. Often it is impossible to show such a mapping graphically when we have large or infinite number of discrete elements in one of the sets. Therefore, for convenience we express a function by writing the inherent relation between the sets.
+A function describes a mathematical statement. The above function maps the relationship between two sets of natural numbers as given at the right in figure [fig:func1]. Often, it is impossible to show such a mapping graphically when we have a large number of discrete elements in either of the sets. Therefore, for convenience we express a function by writing it as an inherent relation between the sets.
 
 [fig:func1]
 
-This is perhaps the simplest way to demonstrate relationships when we deal with sets of numbers (integer, natural number, real numbers, complex numbers, etc.).
+This is perhaps the simplest way to demonstrate relationships when we deal with sets of numbers (integer, natural number, real numbers, complex numbers, etc.)
 
-We can also think of a function as a system/machine which has some inputs, an output and a mechanism that produces the output solely from the inputs. The sets to which the inputs and output belong to are also important. A function often (not always) has a name that allows us to identify the command. Typically a function is deterministic, or it can produce only a single output from an unique set of inputs.
+We can also think of a function as a machine which has takes in inputs and produces an output by using a mechanism that maps the relationship from input to output. The sets to which the inputs and output belong are also important. A function often has a name that allows us to identify it. Typically a function is deterministic -- it can produce only a single output from an unique set of inputs.
 
 **Philosophical Background**
 ----------------------------
 
-Using different mathematical strategies, we can solve problems of various domains.
+Using different mathematical strategies, we can solve problems under various domains.
 
-One philosophical foundation of computer programming was to represent or express all kinds of mathematical problems by a single language and solve them using a generalized mathematics. The result was two equivalent systems - <span><span> **Turing machine**</span></span> and <span><span> **lambda calculus**</span></span>.
+One philosophical foundation of computer programming was to represent or express all kinds of mathematical problems by a single language and solve them using generalized mathematics. The result was two equivalent systems -- <span><span> **the Turing machine**</span></span> and <span><span> **lambda calculus**</span></span>.
 
-Turing machine influenced imperative programming paradigm such as that of <span><span> *Assembly*</span></span>, <span><span> *C*</span></span>, <span><span> *C++*</span></span>, <span><span> *Java*</span></span>, <span><span> *Ruby*</span></span>, <span><span> *Python*</span></span>, etc. languages. On the other hand, lambda calculus influenced birth of several functional languages such as <span><span> *LISP*</span></span>, <span><span> *ML*</span></span>, <span><span> *Haskell*</span></span>, <span><span> *Erlang*</span></span>, etc.
+The concept of a Turing machine influenced imperative programming paradigm such as those of <span><span> *Assembly*</span></span>, <span><span> *C*</span></span>, <span><span> *C++*</span></span>, <span><span> *Java*</span></span>, <span><span> *Ruby*</span></span>, <span><span> *Python*</span></span>, and other programming languages. 
 
-Although we can solve many more problems by using those programming
-languages than by using high school math, it is
-often easy to learn programming by solving smaller problems first. In
-this book (or booklet), we will learn how to solve a problem of known
-category. At the beginning, we will see how a simple arithmetic function
-can be converted into a computer program. Later, we will learn to
-convert more complex functions. We will also learn how to compose a
-function using other functions. A function can also be built using
-itself which is called recursive functions. We will see how they can be
-converted using usual pattern matching.
+On the other hand, lambda calculus influenced the birth of several functional languages such as <span><span> *LISP*</span></span>, <span><span> *ML*</span></span>, <span><span> *Haskell*</span></span>, and <span><span> *Erlang*</span></span>.
 
-Rather than learning alien text, we will try to use our common sense,
-simple IQ and pattern matching to convert a mathematical function into a
-computer program. Although we will write all the code in the language
-<span><span> *C*</span></span>, any other language can be use instead.
-If we use other language, we may need to transform the given pragrams to
-that target language. So, if we do not know any other language, it is
-better to stick to <span><span> *C*</span></span>.
+Although we can solve many more problems by using those programming languages than by using high school math, it is often easy to learn programming by solving smaller problems first. In this book (or booklet), we will learn how to solve a problem of known category. At the beginning, we will see how a simple arithmetic function can be converted into a computer program. Later, we will learn to convert more complex functions. We will also learn how to compose a function using other functions. A function can also be built using itself through recursion. We will see how they can be converted using usual pattern matching.
 
-Anyway, instead of coding (writing in computer to execute it physically)
-the converted code in this book, we will try to learn the programs by
-writing on notebook. Initially, most problems given here are small and
-easy to write on notebook (paper) by pen or pencil. In this way, the
-learner could be familiarize with the relation of theoretical formula
-and the implemented program.
+Rather than learning alien text, we will try to use our common sense, simple IQ and pattern matching to convert a mathematical function into a computer program. Although we will write all the code in the language <span><span> *C*</span></span>, any other language can be used instead. If we use other languages, we may need to transform the given pragrams to that target language. So, if we do not know any other language, it is better to stick to <span><span> *C*</span></span>.
+
+Anyway, instead of coding (writing in computer to execute it physically) the converted code in this book, we will try to learn the programs by jotting it down independently. Initially, most problems given here are small and easy to write on a notebook (paper) by pen or pencil. In this way, the learner becomes familiar with the relationship between theoretical formulas and the implemented programs.
 
 Simple Programs
 ============================================================================================================
 
-Some basic functions will be shown converted to programs in this section. First, we will see
-how to write programs for unary functions. Later, we will learn the same
-of binary and n-ary function.
+We will convert some basic functions into programs in this section. First, we will see how to write programs for unary functions. Later, we will learn the same of binary and n-ary function.
 
 **Programs for Unary Arithmetic Function**
 ------------------------------------------
 
 ### Identity Function
 
-[fig:func]
+The identity function (or a function in which output mirrors the input) looks like this: 
+
+![description](https://raw.githubusercontent.com/pluralsight/guides/master/images/6a1dd0fd-87a9-4864-a01f-4a916d534c15.jpg)
+
 
 function `id(x) = x` can be converted into -
 
@@ -76,6 +59,8 @@ function `id(x) = x` can be converted into -
 
 ### Successor Function
 
+Successor functions use the `+` operator to add 1 to the input and return its successor. 
+
    <span>**Operator**</span> | <span>**Name**</span>
   ---------------------------|-----------------------
               `+` | Addition
@@ -84,7 +69,7 @@ function `id(x) = x` can be converted into -
               `/` | Division
               `%` | Reminder
 
-function `suc(x) = x + 1` can be converted into -
+function `suc(x) = x + 1` can be converted to:
 
 ```c
     int suc(int x){
@@ -94,9 +79,9 @@ function `suc(x) = x + 1` can be converted into -
 
 ### Twice Function
 
-function in arithmetic can be defined as – `twice(x) = 2x`
+This is defined as `twice(x) = 2x` in arithmetic.
 
-It can be converted into a programming function as -
+In C, the same function takes the form below. 
 ```c
     int twice(int x){
      return 2 * x;
@@ -105,40 +90,42 @@ It can be converted into a programming function as -
 
 ### Square Function
 
-function in arithmetic can be defined as – `square(x) = x^2`
+This function is defined as `square(x) = x^2` arithmetically.
 
-It can be converted into a programming function as -
+In C, it takes the form below. 
 ```c
     int square(int x){
      return x * x;
     }
 ```
 
-Here we present a pictorial representation of the above function
-<span>*square*</span> where the parameter `x` is mutiplied with itself
-to produce and return the result.
+Here we present a pictorial representation of the above function <span>*square*</span> where the parameter `x` is mutiplied with itself to produce and return the result.
+
+
+![description](https://raw.githubusercontent.com/pluralsight/guides/master/images/026d259c-d095-4b36-a73c-dc96a1bdd926.gif)
+
 
 ### Polynomial Function
 
-function in arithmetic `poly_1(x) = x^2 + 1`
+In arithmetic, the function is defined as: `poly_1(x) = x^2 + 1`
 
-can be converted into a programming function as -
+It can be converted into a programming function as shown below: 
 ```c
     int poly1(int x){
      return x * x + 1;
     }
 ```
 
-function in arithmetic can be defined as – `poly2(x) = x^4 + x^2 + 1`
+In arithmetic, the function is defined as: `poly2(x) = x^4 + x^2 + 1`
 
-It can be converted into a programming function as -
+It can be converted into a programming function as shown below: 
 ```c
     int poly2(int x){
      return (x * x * x * x) + (x * x) + 1;
     }
 ```
 
-can be simplified by the following function –
+This can be simplified:
 ```
 sum_{i=1}^ni = n(n+1)/2
 ```
@@ -386,8 +373,7 @@ result exactly same as the parameter. Thus, the function can be written
 as – 
 ``` 
 abs(x) = egin{dcases*}
-        x & when `x geq 0`\
-        -x & otherwise
+        x & when `x geq 0`\n        -x & otherwise
         end{dcases*}
 ``` 
 
@@ -397,11 +383,7 @@ The general idea of a conditional function is as follows –
 
 ``` 
 f(x) = egin{dcases*}
-        e_1 & when `1^{st}` condition satisfies\
-        e_2 & when `2^{nd}` condition satisfies\
-        e_3 & when `3^{rd}` condition satisfies\
-        dots & dots \
-        e_n & otherwise
+        e_1 & when `1^{st}` condition satisfies\n        e_2 & when `2^{nd}` condition satisfies\n        e_3 & when `3^{rd}` condition satisfies\n        dots & dots \n        e_n & otherwise
         end{dcases*}
 ``` 
 
@@ -430,8 +412,7 @@ Now we will present some functions those use conditions.
 
 ``` 
 abs(x) = egin{dcases*}
-        x & when `x geq 0`\
-        -x & otherwise
+        x & when `x geq 0`\n        -x & otherwise
         end{dcases*}
 ``` 
 It's code:
@@ -448,8 +429,7 @@ It's code:
 
 ``` 
 filter_{LT}(x,y) = egin{dcases*}
-        x & when `x geq y`\
-        0 & otherwise
+        x & when `x geq y`\n        0 & otherwise
         end{dcases*}
 ``` 
 It's code:
@@ -472,8 +452,7 @@ do it.
 Here the function <span>*abs*</span> is rewritten as –
 ``` 
 switcher(a,b,c,d) = egin{dcases*}
-        c & when `a geq b`\
-        d & otherwise
+        c & when `a geq b`\n        d & otherwise
         end{dcases*}
 ``` 
 ``` 
@@ -504,8 +483,7 @@ mathematically.
 
 ``` 
 tftp(p, c)=egin{dcases*}
-        2	imes p + c & when `p > 1000`\
-        p + c & otherwise
+        2	imes p + c & when `p > 1000`\n        p + c & otherwise
         end{dcases*}
 ``` 
 
@@ -600,12 +578,7 @@ given at the right side.
 The function that solves the problem is –
 ``` 
 getGrade(mark) = egin{dcases*}
-        1 & when `mark geq 90` and `mark leq 100`\
-        2 & else when `mark geq 80`\
-        3 & else when `mark geq 70`\
-        4 & else when `mark geq 60`\
-        5 & else when `mark geq 40`\
-        6 & otherwise
+        1 & when `mark geq 90` and `mark leq 100`\n        2 & else when `mark geq 80`\n        3 & else when `mark geq 70`\n        4 & else when `mark geq 60`\n        5 & else when `mark geq 40`\n        6 & otherwise
         end{dcases*}
 ``` 
  Hence, the code for the above function is –
@@ -633,12 +606,7 @@ generate result with letter grades directly, it will be definitely more
 understandable as shown here – 
 ``` 
 getGradeLetter(mark) = egin{dcases*}
-        hbox{'A'} & when `mark geq 90` and `mark leq 100`\
-        hbox{'B'} & else when `mark geq 80`\
-        hbox{'C'} & else when `mark geq 70`\
-        hbox{'D'} & else when `mark geq 60`\
-        hbox{'E'} & else when `mark geq 40`\
-        hbox{'F'} & otherwise
+        hbox{'A'} & when `mark geq 90` and `mark leq 100`\n        hbox{'B'} & else when `mark geq 80`\n        hbox{'C'} & else when `mark geq 70`\n        hbox{'D'} & else when `mark geq 60`\n        hbox{'E'} & else when `mark geq 40`\n        hbox{'F'} & otherwise
         end{dcases*}
 ``` 
 Since the letter grades are actually letters or
@@ -697,15 +665,7 @@ prices for different item numbers are given at the right.
 The function that solves the problem is –
 ``` 
 {hbox{em getPrice}}({hbox{em item}}) = egin{dcases*}
-        60.00 & when {em item} `= 1`\
-        80.00 & when {em item} `= 2`\
-        100.50 & when {em item} `= 3`\
-        130.75 & when {em item} `= 4`\
-        85.00 & when {em item} `= 5`\
-        15.25 & when {em item} `= 6`\
-        20.00 & when {em item} `= 7`\
-        15.00 & when {em item} `= 8`\
-        0 & otherwise 
+        60.00 & when {em item} `= 1`\n        80.00 & when {em item} `= 2`\n        100.50 & when {em item} `= 3`\n        130.75 & when {em item} `= 4`\n        85.00 & when {em item} `= 5`\n        15.25 & when {em item} `= 6`\n        20.00 & when {em item} `= 7`\n        15.00 & when {em item} `= 8`\n        0 & otherwise 
         end{dcases*}
 ``` 
 Hence, the code for the above function is –
@@ -805,17 +765,12 @@ plain definition - `0` is a natural number and `n+1` is a natural number
 if `n` is a natural number. We can use it to write a function to know
 whether a number is natural –
 ``` {hbox{em isNatural}}(x)=egin{dcases*}
-        {hbox{em true}}& when `x=0`\
-        {hbox{em false}}& when `x<0`\
-        {hbox{em isNatural}}(x-1) & otherwise
+        {hbox{em true}}& when `x=0`\n        {hbox{em false}}& when `x<0`\n        {hbox{em isNatural}}(x-1) & otherwise
         end{dcases*}``` 
 
 Similarly we can write another function to distinguish an animal as
 human – ``` {hbox{em isHuman}}(x)=egin{dcases*}
-        {hbox{em true}}& when `x=` {em Adam}\
-        {hbox{em true}}& when `x=` {em Eve}\
-        {hbox{em false}}& when `x=` {em Amoeba}\
-        {hbox{em isHuman}}({hbox{em mother of }}x) & otherwise
+        {hbox{em true}}& when `x=` {em Adam}\n        {hbox{em true}}& when `x=` {em Eve}\n        {hbox{em false}}& when `x=` {em Amoeba}\n        {hbox{em isHuman}}({hbox{em mother of }}x) & otherwise
         end{dcases*}``` 
 
 It says, `x` is a human if `x` is <span>*Adam*</span> or
@@ -981,9 +936,7 @@ as the induction hypothesis.
 Now our function looks like –
 ``` 
 {hbox{em fibonacci}}(x)=egin{dcases*}
-        0 & when `x=0`\
-        1 & when `x=1`\
-        {hbox{em fibonacci}}(x-1) + {hbox{em fibonacci}}(x-2) & otherwise
+        0 & when `x=0`\n        1 & when `x=1`\n        {hbox{em fibonacci}}(x-1) + {hbox{em fibonacci}}(x-2) & otherwise
         end{dcases*}
 ``` 
 
@@ -1005,8 +958,7 @@ Obviously, the code for the above function is –
 
 ``` 
 {hbox{em add}}(x,y)=egin{dcases*}
-        x & when `y=0`\
-        suc({hbox{em add}}(x,y-1)) & otherwise
+        x & when `y=0`\n        suc({hbox{em add}}(x,y-1)) & otherwise
         end{dcases*}
 ``` 
 
@@ -1035,8 +987,7 @@ division of two numbers by using only subtraction.
 can be rewritten as – 
 ``` 
 {hbox{em sumOfQuad}}(n)=egin{dcases*}
-        1 & when `n=1`\
-        {hbox{em exp}}(n,4) + {hbox{em sumOfQuad}}(n-1) & otherwise
+        1 & when `n=1`\n        {hbox{em exp}}(n,4) + {hbox{em sumOfQuad}}(n-1) & otherwise
         end{dcases*}
 ```
  
@@ -1057,8 +1008,7 @@ A similar, in fact, more generalized series is –
 
 ``` 
 {hbox{em sumOfPow}}(n,k)=egin{dcases*}
-        1 & when `n=1`\
-        {hbox{em exp}}(n,k) + {hbox{em sumOfPow}}(n-1,k) & otherwise
+        1 & when `n=1`\n        {hbox{em exp}}(n,k) + {hbox{em sumOfPow}}(n-1,k) & otherwise
         end{dcases*}
 ``` 
 
@@ -1085,8 +1035,7 @@ recursion part. Obviously, we should change the name of the function.
 
 ``` 
 {hbox{em prodOfPow}}(n,k)=egin{dcases*}
-        1 & when `n=1`\
-        {hbox{em exp}}(n,k) 	imes {hbox{em prodOfPow}}(n-1,k) & otherwise
+        1 & when `n=1`\n        {hbox{em exp}}(n,k) 	imes {hbox{em prodOfPow}}(n-1,k) & otherwise
         end{dcases*}
 ``` 
 
@@ -1181,9 +1130,7 @@ adding that of those two cells. So, our function is as follows:
 
 ``` 
 {hbox{em ways}}(x,y)=egin{dcases*}
-        1 & when `x=0` or `y=0`\
-        ways(x-1,y)+ways(x,y-1) & otherwise\
-        end{dcases*}
+        1 & when `x=0` or `y=0`\n        ways(x-1,y)+ways(x,y-1) & otherwise\n        end{dcases*}
 ``` 
 
 Now we can write our function in C very easily:
