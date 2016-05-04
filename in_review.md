@@ -1,12 +1,12 @@
+### Handling file upload using Ruby on Rails 5 API  by Hristo Georgiev
+- [Read the guide](http://tutorials.pluralsight.com/ruby-ruby-on-rails/handling-file-upload-using-ruby-on-rails-5-api?status=in-review)
+- [Read more from Hristo Georgiev](http://tutorials.pluralsight.com/author/Kaizeras) <img src="https://avatars.githubusercontent.com/u/6340189?v=3" width="30" height="30" alt="Hristo Georgiev" />
+- Related to: Ruby, Ruby on Rails
+
 ### Building a Generic CSV Writer/Reader using Reflection by Murat Aykanat
 - [Read the guide](http://tutorials.pluralsight.com/microsoft-net/building-a-generic-csv-writer-reader-using-reflection?status=in-review)
 - [Read more from Murat Aykanat](http://tutorials.pluralsight.com/author/aykanatm) <img src="https://avatars.githubusercontent.com/u/9140297?v=3" width="30" height="30" alt="Murat Aykanat" />
 - Related to: Microsoft.NET (C#, ASP.NET, VB.NET, etc)
-
-### Testing user interfaces with browser automation by Peter Olson
-- [Read the guide](http://tutorials.pluralsight.com/front-end-javascript/testing-user-interfaces-with-browser-automation?status=in-review)
-- [Read more from Peter Olson](http://tutorials.pluralsight.com/author/peterolson) <img src="https://avatars.githubusercontent.com/u/920512?v=3" width="30" height="30" alt="Peter Olson" />
-- Related to: Front-End JavaScript (Angular, React, Meteor, etc)
 
 ### Profiling Python's core collection data structures by Luke Lee
 - [Read the guide](http://tutorials.pluralsight.com/python/profiling-python-s-core-collection-data-structures?status=in-review)
@@ -27,11 +27,6 @@
 - [Read the guide](http://tutorials.pluralsight.com/front-end-javascript/getting-accustomed-to-angular-2-0?status=in-review)
 - [Read more from Tom Greco](http://tutorials.pluralsight.com/user/thomasjosephgreco) <img src="https://avatars.githubusercontent.com/u/6646552?v=3" width="30" height="30" alt="Tom Greco" />
 - Related to: Front-End JavaScript (Angular, React, Meteor, etc)
-
-### Beginner: Linux Navigation Manual by Prakrit Duangsutha
-- [Read the guide](http://tutorials.pluralsight.com/other/beginner-linux-navigation-manual?status=in-review)
-- [Read more from Prakrit Duangsutha](http://tutorials.pluralsight.com/author/brillydev) <img src="https://avatars.githubusercontent.com/u/2718812?v=3" width="30" height="30" alt="Prakrit Duangsutha" />
-- Related to: other
 
 ### Profiling memory usage in Python by Luke Lee
 - [Read the guide](http://tutorials.pluralsight.com/python/profiling-memory-usage-in-python?status=in-review)

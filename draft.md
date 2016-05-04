@@ -1,7 +1,17 @@
-### Handling file upload using Ruby on Rails 5 API and AngularJS by Hristo Georgiev
-- [Read the guide](http://tutorials.pluralsight.com/ruby-ruby-on-rails/handling-file-upload-using-ruby-on-rails-5-api-and-angularjs?status=draft)
-- [Read more from Hristo Georgiev](http://tutorials.pluralsight.com/author/Kaizeras) <img src="https://avatars.githubusercontent.com/u/6340189?v=3" width="30" height="30" alt="Hristo Georgiev" />
-- Related to: Ruby, Ruby on Rails
+### AngularJS Models by Prateek Gupta
+- [Read the guide](http://tutorials.pluralsight.com/front-end-javascript/angularjs-models?status=draft)
+- [Read more from Prateek Gupta](http://tutorials.pluralsight.com/author/prtkgpt) <img src="https://avatars.githubusercontent.com/u/2454349?v=3" width="30" height="30" alt="Prateek Gupta" />
+- Related to: Front-End JavaScript (Angular, React, Meteor, etc)
+
+### Test 1 by Prateek Gupta
+- [Read the guide](http://tutorials.pluralsight.com/php/test-1?status=draft)
+- [Read more from Prateek Gupta](http://tutorials.pluralsight.com/author/prtkgpt) <img src="https://avatars.githubusercontent.com/u/2454349?v=3" width="30" height="30" alt="Prateek Gupta" />
+- Related to: PHP
+
+### Implementation of 'Forgot/Reset Password' feature in Django by ruddra
+- [Read the guide](http://tutorials.pluralsight.com/python/implementation-of-forgot-reset-password-feature-in-django?status=draft)
+- [Read more from ruddra](http://tutorials.pluralsight.com/author/ruddra) <img src="https://avatars.githubusercontent.com/u/3099861?v=3" width="30" height="30" alt="ruddra" />
+- Related to: Python
 
 ### Building a Generic CSV Writer/Reader by Murat Aykanat
 - [Read the guide](http://tutorials.pluralsight.com/microsoft-net/building-a-generic-csv-writer-reader?status=draft)
