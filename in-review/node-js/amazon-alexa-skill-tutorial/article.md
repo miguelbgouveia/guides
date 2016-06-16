@@ -1,4 +1,5 @@
-### Build your first Alexa skill
+![description](https://raw.githubusercontent.com/pluralsight/guides/master/images/9ab6255a-0fb9-47ee-9143-430ff0b1c23a.png)
+
 
 ![Alexa Skill Terminology](https://cdn-images-1.medium.com/max/1200/1*E3155-o18xfC9hVHCriTbQ.png)
 
